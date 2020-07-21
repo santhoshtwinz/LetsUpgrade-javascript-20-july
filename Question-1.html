@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let range = window.prompt("Enter a positive number");
+        let arr = [];
+        while(range<0)
+        {
+            range = window.prompt("You Entered a negative number,Please Enter a positive number");
+        }
+        for(i=0;i<range;i++)
+        {
+            arr[i]=i+1;
+        }
+        console.log(arr);
+
+        let odd = arr.filter(x=> x%2!=0 )
+        console.log(odd);
+    </script>
+</body>
+</html>

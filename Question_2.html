@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class User {
+            constructor(name,age,email)
+            {
+                this.name = name;
+                this.age = age;
+                this.email= email;
+                this.courses= [];
+            }
+
+                login(){
+                    console.log((this.name)+" has logged in");
+                     }
+                logout(){
+                    console.log((this.name)+" has Logged out");
+                }
+            }
+        
+            
+debugger;
+            class Moderator extends User{
+               constructor(name,age,email,coins)
+               {
+                   super(name,age,email);
+                   this.coins = 0;
+               }
+                Addcoins(){
+                    this.coins++;
+                    console.log((this.name)+" has "+(this.coins)+" coins");
+                     }
+                Removecoins(){
+                    this.coins--;
+                    console.log((this.name)+" has "+(this.coins)+" coins");
+                }
+            }
+
+             class Admin extends Moderator{
+                addcourse(user,course){
+
+              
+                user.courses.push(course);
+                console.log(user)
+                }
+             }
+             let user1 = new User("Santhosh",22,"Santhosh@gmail.com")
+            let user2 = new User("Sakthish",22,"Sakthish@gmail.com")
+            let moderator1 = new Moderator("Santhosh",22,"Santhosh@gmail.com")
+
+            let admin1 = new Admin("Tiger",40,"Tiger@gmail.com")
+            let users = [user1,user2,moderator1,admin1];
+
+             users.forEach(number=>{
+                 console.log(number);
+             }
+             )
+             admin1.addcourse(user1,"Catia v5");
+             admin1.addcourse(user1,"Solidworks");
+             
+user1.login();
+
+moderator1.Addcoins();
+moderator1.Addcoins();
+moderator1.Addcoins();
+moderator1.Addcoins();
+user1.logout();
+    </script>
+</body>
+</html>
